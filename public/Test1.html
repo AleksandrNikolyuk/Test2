@@ -56,28 +56,6 @@
 
       var ListCount = 0;
 
-      function addToList(){
-        console.log( 'event work');
-        if( ListCount <= 4){
-          console.log( Receiver.value );
-          var newListItem = document.createElement('li');
-              newListItem.innerText =  Receiver.value;
-
-              list.appendChild( newListItem );
-
-              ListCount++;
-
-              if( ListCount === 5){
-                AddToList.removeEventListener('click', addToList);
-                AddToList.setAttribute('disabled', true);
-                error.innerText = "Нельзя добавить больше 5 полей";
-              }
-
-        }
-        Receiver.value = "";
-      };
-      AddToList.addEventListener('click', addToList);
-
     </script>
   </body>
 

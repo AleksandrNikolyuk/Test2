@@ -12,20 +12,21 @@
         <div class="ButtonsBlock" hidden>
           <h2> Ways to execute </h2>
           <div>
-            <button ONCLICK="CounterAdd()"> Click fiers from HTML</button>
-            <button onclick="console.log( this )"> Context this</button>
+            <button onclick="CounterAdd()"> Click fiers from HTML</button>
             <button id="fromCode"> Click fiers from code</button>
             <button id="execution"> Execution </button>
             <button id="eventObj"> Show EventObj </button>
+
+            <button onclick="console.log( this )"> Context this</button>
           </div>
         </div>
 
-        <div class="ButtonsBlock">
+        <div class="ButtonsBlock" hidden>
           <header>
               <button id='appendImage'>Append Image</button>
           </header>
           <div id="appendBlock">
-            
+
           </div>
         </div>
 
@@ -54,7 +55,7 @@
           </div>
         </div>
 
-        <div class="ButtonsBlock" hidden>
+        <div class="ButtonsBlock">
           <h2> Remove Event Listeners</h2>
           <div>
             <button id="doStuff" class="eventButton">Do something</button>

@@ -25,25 +25,7 @@
   transitionend – когда CSS-анимация завершена.
 */
 
-  document.addEventListener("DOMContentLoaded", function(event) {
-      console.log("DOM fully loaded and parsed");
-  });
 
-  appendImage.addEventListener('click', function(){
-    var ImageCat = new Image();
-
-
-        ImageCat.onload = function(){
-          alert( ImageCat.src, 'was loaded');
-          ImageCat.classList.add('loadedImage');
-        };
-
-        ImageCat.onerror = function(err){
-          new Error('Some Error on load', err);
-        };
-        ImageCat.src = '/images/cat4.jpg';
-        appendBlock.appendChild(ImageCat);
-  });
   // Demo 1
   // Функция вызывается напрямую из HTML
   // onclick="someFunc()"
@@ -56,6 +38,7 @@
   // Demo 2
   // Обработчик вешается из кода на элемент
   // Syntax: element.onclick = functionRef;
+
   fromCode.onclick = CounterAdd;
   fromCode.onclick = function(){
     console.log('do some stuff');
@@ -72,15 +55,15 @@
     console.log('exect func');
   }
 
-  execution.onclick = ExecutionFunc; //
-  //console.log(   execution.onclick = ExecutionFunc() ); //undefined Если
+  // execution.onclick = ExecutionFunc; //
+  // execution.onclick = ExecutionFunc() ; //undefined Если
 
   // Demo 4
   // Event Obj
 
-  eventObj.onclick = function( event ){
-    console.log( 'event', event );
-  };
+  // eventObj.onclick = function( event ){
+  //   console.log( 'event', event );
+  // };
 
   // document.onclick = function( e ){
   //   console.log('click on cordinate:', e.clientX, e.clientY);
@@ -95,20 +78,23 @@
     затем выше и так далее, вверх по цепочке вложенности.
   */
 
-    bubbleParent.onclick = function () {
-        alert("onclick в потомке");
-    };
-
-    bubbleChild.onclick = function () {
-        alert("onclick в потомке 2");
-    };
+    // bubbleParent.onclick = function () {
+    //     alert("onclick в потомке");
+    // };
+    //
+    // bubbleChild.onclick = function () {
+    //     alert("onclick в потомке 2");
+    // };
 
 
   // Demo 5
 
+
+
   // addEventListener
   function ChangeBackColor( e ){
-    console.log( e.target.dataset.color );
+
+    console.log( e.target );
     var color = e.target.dataset.color;
     document.body.style.background = color;
   }
@@ -121,12 +107,14 @@
   // Demo 6
   function ToggleClass( e ){
     e.target.classList.toggle('animation');
-    // transition.removeEventListener('click', ToggleClass);
+
   }
   transition.addEventListener('click', ToggleClass);
+
   function transitionAnimation(e){
      // Сработает для КАЖДОГО анимированого свойства
     console.log('Animation end', e.propertyName);
+    transition.removeEventListener('click', ToggleClass);
   }
   transition.addEventListener('transitionend', transitionAnimation);
 
@@ -142,7 +130,7 @@
     AddStuff.removeAttribute('disabled');
 
     // LISTENER REMOVE
-    doStuff.removeEventListener('click', logger );
+    // doStuff.removeEventListener('click', logger );
   }
 
   function addListenerToStuff(){
@@ -153,8 +141,8 @@
     AddStuff.setAttribute('disabled', true);
 
     // LISTENER ADD
-    StopStuff.addEventListener('click', removeListenerFromStuff);
-    doStuff.addEventListener('click', logger );
+    // StopStuff.addEventListener('click', removeListenerFromStuff);
+    // doStuff.addEventListener('click', logger );
   }
 
   doStuff.addEventListener('click', logger );
@@ -199,9 +187,29 @@
     contextmenu – при правом клике показывается контекстное меню браузера.
   */
 
-    preventEventBlock.addEventListener( 'click', function(event){
-      event.preventDefault();
-      event.target.style.background = 'yellow';
-      event.target.style.color = 'red';
-      console.log('YOU SHALL NOT PASS');
-    });
+    // preventEventBlock.addEventListener( 'click', function(event){
+    //   event.preventDefault();
+    //   event.target.style.background = 'yellow';
+    //   event.target.style.color = 'red';
+    //   console.log('YOU SHALL NOT PASS');
+    // });
+    //
+    // document.addEventListener("DOMContentLoaded", function(event) {
+    //     console.log("DOM fully loaded and parsed");
+    // });
+    //
+    // appendImage.addEventListener('click', function(){
+    //   var ImageCat = new Image();
+    //
+    //
+    //       ImageCat.onload = function(){
+    //         alert( ImageCat.src, 'was loaded');
+    //         ImageCat.classList.add('loadedImage');
+    //       };
+    //
+    //       ImageCat.onerror = function(err){
+    //         new Error('Some Error on load', err);
+    //       };
+    //       ImageCat.src = '/images/cat4.jpg';
+    //       appendBlock.appendChild(ImageCat);
+    // });
