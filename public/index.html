@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>asdas</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrap" id="wrap">
+        <h1>Welcome to JS Events</h1>
+
+        <div class="ButtonsBlock" hidden>
+          <h2> Ways to execute </h2>
+          <div>
+            <button ONCLICK="CounterAdd()"> Click fiers from HTML</button>
+            <button onclick="console.log( this )"> Context this</button>
+            <button id="fromCode"> Click fiers from code</button>
+            <button id="execution"> Execution </button>
+            <button id="eventObj"> Show EventObj </button>
+          </div>
+        </div>
+
+        <div class="ButtonsBlock">
+          <header>
+              <button id='appendImage'>Append Image</button>
+          </header>
+          <div id="appendBlock">
+            
+          </div>
+        </div>
+
+        <div class="ButtonsBlock" hidden>
+          <div id="bubbleParent">
+            <div id="bubbleChild">
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="ButtonsBlock" hidden>
+          <h2>Add Event Listener</h2>
+          <div class="changeColorExercise">
+            <button class="_changeColor" data-color="red">Red</button>
+            <button class="_changeColor" data-color="blue">Blue</button>
+            <button class="_changeColor" data-color="green">Green</button>
+          </div>
+        </div>
+
+        <div class="ButtonsBlock" hidden>
+          <h2>Transition</h2>
+          <div class="transitionEnd">
+            <button id="transition" class="buttonAnimated"> Animation </button>
+          </div>
+        </div>
+
+        <div class="ButtonsBlock" hidden>
+          <h2> Remove Event Listeners</h2>
+          <div>
+            <button id="doStuff" class="eventButton">Do something</button>
+            <button id="StopStuff">Remove event listener from </button>
+            <button id="AddStuff" disabled>Add event listener from </button>
+          </div>
+        </div>
+
+        <div class="ButtonsBlock" hidden>
+          <h2> Multiple Events</h2>
+          <div>
+            <button id="MultiEvent">Do something</button>
+
+          </div>
+        </div>
+
+        <div class="ButtonsBlock" hidden>
+          <textarea rows="8" cols="40" id="area" placeholder="Кликни меня"></textarea>
+        </div>
+
+        <div class="ButtonsBlock" hidden>
+          <h2>event.preventDefault</h2>
+            <a  id="preventEventBlock" href="http://google.com.ua">Google</a>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/eventsOrder.js"></script>
+  </body>
+
+
+</html>
