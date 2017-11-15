@@ -20,39 +20,3 @@
 
   var OurSliderImages = ['images/cat1.jpg', 'images/cat2.jpg', 'images/cat3.jpg', 'images/cat4.jpg', 'images/cat5.jpg', 'images/cat6.jpg', 'images/cat7.jpg', 'images/cat8.jpg'];
   var currentPosition = 0;
-
-      window.addEventListener('load', function(){
-        console.log( 'doc loaded ');
-        RenderImage(currentPosition);
-      });
-
-      function RenderImage( id ){
-            slider.innerHTML = "";
-        var MySliderImage = new Image();
-            MySliderImage.src = OurSliderImages[id];
-            slider.appendChild( MySliderImage );
-      }
-
-      NextSilde.addEventListener('click', function(){
-        currentPosition++;
-        console.log('curent position:', currentPosition);
-        if( currentPosition >= OurSliderImages.length-1){
-          console.log( 'refresh slider');
-          currentPosition = 0;
-          RenderImage(currentPosition);
-        } else {
-          RenderImage(currentPosition);
-        }
-      });
-
-      PrevSilde.addEventListener('click', function(){
-        currentPosition--;
-        console.log('curent position:', currentPosition);
-        if( currentPosition < 0){
-          console.log( 'refresh slider');
-          currentPosition = OurSliderImages.length-1;
-          RenderImage(currentPosition);
-        } else {
-          RenderImage(currentPosition);
-        }
-      });
