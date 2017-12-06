@@ -11,6 +11,9 @@
 
         <header>
           <input type="text" placeholder="" id="Receiver"/>
+          <input type="color" placeholder="" id="BackColor"/>
+          <input type="color" placeholder="" id="FontColor"/>
+          <input type="range" placeholder="" min="0" max="500" id="BlockWidth"/>
           <input type="submit" value="Add" id="AddToList"/>
         </header>
 
@@ -27,36 +30,151 @@
 
 
     </div>
-    <script>
-      /*
-        Задание:
 
-          Написать скрипт, который будет добавлять введеный в инпут Receiver текст
-          в список list.
-          Если в списке больше 5 записей, убирать Event с кнопки AddToList.
-          Кнопке AddToList добавить disabled = true
 
-          После каждого ввода очищать значение инпута
 
-          Используемые методы:
-
-          addEventListener
-          removeEventListener
-
-          document.getElementById
-          document.createElement
-
-          element.innerText
-          element.setAttribute
-          element.appendChild
-
-          Получить значение инпута: Receiver.value [Receiver - это id]
-
-      */
-
-      var ListCount = 0;
-
-    </script>
+//     <script>
+//       /*
+//         Задание:
+//
+//           Написать скрипт, который будет добавлять введеный в инпут Receiver текст
+//           в список list.
+//           Если в списке больше 5 записей, убирать Event с кнопки AddToList.
+//           Кнопке AddToList добавить disabled = true
+//
+//           После каждого ввода очищать значение инпута
+//
+//           Используемые методы:
+//
+//           addEventListener
+//           removeEventListener
+//
+//           document.getElementById
+//           document.createElement
+//
+//           element.innerText
+//           element.setAttribute
+//           element.appendChild
+//
+//           Получить значение инпута: Receiver.value [Receiver - это id]
+//
+//       */
+//
+//     // var ListCount = 0;
+//     // var Receiver = document.getElementById('Receiver');
+//     // var AddToList = document.getElementById('AddToList');
+//     // var list = document.getElementById('list');
+//     //     //console.log('Check the targets', Receiver, AddToList );
+//     //     function AddItem(event) {
+//     //         var LiValue = Receiver.value;
+//     //
+//     //         var LiBlock = document.createElement('li');
+//     //             LiBlock.innerText = LiValue;
+//     //             console.log(LiBlock);
+//     //             list.appendChild(LiBlock);
+//     //             Receiver.value = null;
+//     //             ListCount++;
+//     //             console.log(ListCount);
+//     //             if (ListCount === 5) {
+//     //                 AddToList.setAttribute('disabled', true);
+//     //                 AddToList.removeEventListener('click', AddItem);
+//     //             };
+//     //     }
+//     //     AddToList.addEventListener( 'click', AddItem );
+//
+//     // REFACTORING
+//     // -------------------------------------------------------------------------
+//
+//     // REFACTORING
+//
+//
+//     // var ListCount = 0,
+//     //     Receiver = document.getElementById('Receiver'),
+//     //     AddToList = document.getElementById('AddToList'),
+//     //     list = document.getElementById('list'),
+//     //     error = document.getElementById('error');
+//     //
+//     //     console.log('Check the targets', Receiver, AddToList );
+//     //
+//     //     function AddItem(event) {
+//     //
+//     //         var LiValue = Receiver.value,
+//     //             LiBlock = document.createElement('li');
+//     //
+//     //             if(Receiver.value === ''){
+//     //                 error.innerText = 'Field can\'t be null';
+//     //             } else {
+//     //                 if (ListCount <= 5) {
+//     //
+//     //                     LiBlock.innerText = LiValue;
+//     //                     list.appendChild(LiBlock);
+//     //                     Receiver.value = null;
+//     //                     ListCount++;
+//     //
+//     //                     if(ListCount === 5){
+//     //                         error.innerText = 'List can\'t have more then five elements';
+//     //                         AddToList.setAttribute('disabled', true);
+//     //                         AddToList.removeEventListener('click', AddItem);
+//     //                     }
+//     //                 } // if ListCount <= 5
+//     //             } // Else
+//     //     } // fn AddItem
+//     //     AddToList.addEventListener( 'click', AddItem );
+//
+// // ----------------Test1-----------------------------------------
+//
+//
+//         // var myreciver = document.getElementById('Receiver'),
+//         //     myaddtolist = document.getElementById('AddToList'),
+//         //     list = document.getElementById('list'),
+//         //     error = document.getElementById('error'),
+//         //     ListCount = 0;
+//         //     // console.log('Some text', myreciver, myaddtolist);
+//         //
+//         //     function myitem(event) {
+//         //         var mylist = document.createElement('li'),
+//         //             recivervalue = myreciver.value;
+//         //
+//         //             if (ListCount <= 5) {
+//         //                 mylist.innerText = recivervalue;
+//         //                 list.appendChild(mylist);
+//         //                 myreciver.value = null;
+//         //                 ListCount++;
+//         //             } if (ListCount === 5) {
+//         //                 error.innerText = 'Inaf';
+//         //                 myaddtolist.setAttribute('disabled', true);
+//         //                 myaddtolist.removeEventListener('click', myitem);
+//         //             }
+//         //     }
+//         //     myaddtolist.addEventListener( 'click', myitem );
+//
+// // ---------------Test2-------------------------------------------
+// //
+//             var ListCount = 0,
+//                 MyReceiver = document.getElementById('Receiver'),
+//                 MyAddToList = document.getElementById('AddToList'),
+//                 error = document.getElementById('error'),
+//                 MyList = document.getElementById('list');
+//
+//                     function Myevent(event) {
+//                         var ValueReceiver = MyReceiver.value,
+//                             MyLi = document.createElement('li');
+//                             if(ListCount < 5) {
+//                                 MyLi.innerText = ValueReceiver;
+//                                 MyList.appendChild(MyLi);
+//                                 MyReceiver.value = null;
+//                                 ListCount++;
+//                             } if(ListCount === 5) {
+//                                 error.innerText = 'Probably enough';
+//                                 MyAddToList.setAttribute('disabled', true);
+//                                 MyReceiver.style.color.background = 'red';
+//                                 MyAddToList.removeEventListener('click', Myevent);
+//                             }
+//                     }
+//
+//                     MyAddToList.addEventListener('click', Myevent);
+//
+//     </script>
   </body>
 
 
