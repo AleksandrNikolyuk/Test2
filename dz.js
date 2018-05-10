@@ -1,19 +1,6 @@
+
+
 /*
-
-  Задание 2.
-
-  Сделать список добавления обьектов в котором есть:
-  1. Текстовое поле input[type="text"]
-  2. Выбор цвета фона input[type="color"]
-  3. Выбор цвета текста input[type="color"]
-  4. Ширины блока input[type=range]
-
-  + У блока после добавления должна быть кнопка удалить блок -> delete
-
-
-    -----------------------------------------\
-
-  Задание 3.
     Сделать полноценный todo list.
     1. Добавление новой записи - input + add button -> resoult => li -> text / button.done / button.cancel / button.delete
     2. Три статуса у записи:
@@ -30,10 +17,6 @@
         ICONS: https://www.flaticon.com/
         https://raw.githubusercontent.com/Paradoxis/Angular-2.0-todo-list/master/img/todo-list.jpg
 */
-
-
-
-
 
 
 
